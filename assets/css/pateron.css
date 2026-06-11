@@ -1,0 +1,93 @@
+.donation-banner {
+    margin: 3rem 0;
+    padding: 2.5rem;
+    background-color: var(--code-bg);
+    border: 2px solid #0057b7; /* Ukrainian Azure Blue */
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle decorative dual-color top border accent */
+.donation-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #0057b7 50%, #ffd700 50%);
+}
+
+.donation-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+@media (min-width: 600px) {
+    .donation-content {
+        flex-direction: row;
+        text-align: left;
+        justify-content: space-between;
+    }
+}
+
+.patreon-logo {
+    width: 48px;
+    height: 48px;
+    fill: #0057b7; /* Styled blue to match the theme */
+    flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .patreon-logo {
+        fill: #ffd700; /* Switches to Gold in dark mode for better contrast */
+    }
+}
+
+.donation-text {
+    flex: 1;
+}
+
+.donation-text h2 {
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.5rem;
+    color: #0057b7;
+}
+
+@media (prefers-color-scheme: dark) {
+    .donation-text h2 {
+        color: #ffd700;
+    }
+}
+
+.donation-text p {
+    margin: 0;
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.donation-button {
+    display: inline-block;
+    background-color: #ffd700; /* Ukrainian Golden Yellow */
+    color: #0f172a !important; /* Dark text for optimal contrast on yellow */
+    font-weight: 700;
+    padding: 0.8rem 1.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+    border: 1px solid #e0bc00;
+}
+
+.donation-button:hover {
+    background-color: #e6c200;
+    text-decoration: none !important;
+}
+
+.donation-button:active {
+    transform: scale(0.98);
+}

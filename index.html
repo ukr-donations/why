@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇺🇦 Donations</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/pateron.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="assets/contentloader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langSelect = document.getElementById('lang-select');
+            
+            function updateLanguageContent() {
+                const selectedLang = langSelect.value;
+                loadMarkdown(`content-${selectedLang}.md`, 'content');
+                loadMarkdown(`footer.md`, 'footer');
+            }
+            langSelect.addEventListener('change', updateLanguageContent);
+            updateLanguageContent();
+        });
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>UKR DONATIONS</h1>
+            <div class="lang-switcher">
+                <select id="lang-select" aria-label="Language Selector">
+                    <option value="en">English</option>
+                    <option value="uk">Українська</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main id="content">
+        <div class="spinner-container">
+            <div class="spinner"></div>
+        </div>
+    </main>
+
+    <section class="donation-banner">
+        <div class="donation-content">
+            <svg class="patreon-logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 .048h4.063v23.904H0V.048zm15.11 0c-4.908 0-8.91 3.99-8.91 8.87 0 4.877 4.002 8.868 8.91 8.868 4.912 0 8.89-3.99 8.89-8.87 0-4.878-3.978-8.869-8.89-8.869z" />
+            </svg>
+            <div class="donation-text">
+                <h2>Support us!</h2>
+            </div>
+            <a href="https://www.patreon.com/" target="_blank" rel="noopener noreferrer" class="donation-button">
+                Become a Patron
+            </a>
+        </div>
+    </section>
+
+    <footer id="footer"></footer>
+
+</body>
+
+</html>
